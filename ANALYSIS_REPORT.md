@@ -30,7 +30,7 @@ This report analyzes 25 years of historical data (January 2000 to December 2025)
 | Market | Index | Data Period | Trading Days |
 |--------|-------|-------------|--------------|
 | United States | S&P 500 | 2000-2025 | 6,522 |
-| United States | NASDAQ-100 | 2000-2025 | 6,522 |
+| United States | NASDAQ Composite | 2000-2025 | 6,522 |
 | United Kingdom | FTSE 100 | 2000-2025 | 6,551 |
 | Hong Kong | Hang Seng | 2000-2025 | 6,390 |
 | China | Shanghai Composite | 2000-2025 | 6,277 |
@@ -47,71 +47,71 @@ When you invest for just one year, the outcome is highly uncertain:
 
 | Index | Probability of Profit | Best Case | Worst Case |
 |-------|----------------------|-----------|------------|
-| S&P 500 | 75% | +75% | -49% |
-| NASDAQ-100 | 78% | +87% | -70% |
-| FTSE 100 | 64% | +59% | -43% |
-| Hang Seng | 56% | +96% | -63% |
-| Shanghai Composite | 47% | +256% | -72% |
-| Shenzhen Component | 48% | +364% | -70% |
-| CSI 300 | 50% | +333% | -72% |
+| S&P 500 | 75% | +76% | -49% |
+| NASDAQ Composite | 74% | +95% | -61% |
+| FTSE 100 | 64% | +53% | -42% |
+| Hang Seng | 56% | +100% | -63% |
+| Shanghai Composite | 48% | +236% | -69% |
+| Shenzhen Component | 47% | +344% | -69% |
+| CSI 300 | 49% | +309% | -69% |
 
-**Key Insight:** In a single year, you essentially have a coin-flip chance of making money in Chinese markets, and even in the more stable US markets, there's a 22-25% chance of losing money.
+**Key Insight:** In a single year, you essentially have a coin-flip chance of making money in Chinese markets, and even in the more stable US markets, there's a 25-26% chance of losing money.
 
 ### 5-Year Holding Period: The Tide Begins to Turn
 
 | Index | Probability of Profit | Best Case | Worst Case |
 |-------|----------------------|-----------|------------|
-| S&P 500 | 77% | +176% | -42% |
-| NASDAQ-100 | 89% | +254% | -69% |
-| FTSE 100 | 74% | +94% | -28% |
-| Hang Seng | 67% | +247% | -48% |
-| Shanghai Composite | 70% | +266% | -66% |
-| Shenzhen Component | 67% | +528% | -59% |
-| CSI 300 | 77% | +367% | -62% |
+| S&P 500 | 77% | +173% | -40% |
+| NASDAQ Composite | 90% | +229% | -59% |
+| FTSE 100 | 74% | +92% | -29% |
+| Hang Seng | 66% | +233% | -49% |
+| Shanghai Composite | 68% | +342% | -66% |
+| Shenzhen Component | 64% | +595% | -58% |
+| CSI 300 | 72% | +426% | -62% |
 
-**Key Insight:** After 5 years, your odds improve significantly. The NASDAQ-100 shows an 89% success rate, and even the more volatile Chinese markets reach 67-77%.
+**Key Insight:** After 5 years, your odds improve significantly. The NASDAQ Composite shows a 90% success rate, and even the more volatile Chinese markets reach 64-72%.
 
 ### 10-Year Holding Period: The Power of Patience
 
 | Index | Probability of Profit | Best Case | Worst Case |
 |-------|----------------------|-----------|------------|
-| S&P 500 | 93% | +316% | -30% |
-| NASDAQ-100 | 93% | +654% | -58% |
-| FTSE 100 | 91% | +104% | -26% |
-| Hang Seng | 81% | +161% | -34% |
-| Shanghai Composite | 86% | +329% | -46% |
-| Shenzhen Component | 82% | +495% | -48% |
-| CSI 300 | 91% | +455% | -33% |
+| S&P 500 | 92% | +304% | -28% |
+| NASDAQ Composite | 93% | +508% | -57% |
+| FTSE 100 | 90% | +102% | -25% |
+| Hang Seng | 81% | +177% | -37% |
+| Shanghai Composite | 84% | +353% | -48% |
+| Shenzhen Component | 77% | +516% | -47% |
+| CSI 300 | 90% | +492% | -38% |
 
-**Key Insight:** At 10 years, you have over 80% probability of profit in ALL markets. The worst-case scenarios also improve dramatically—maximum losses shrink from -70% to around -30% to -50%.
+**Key Insight:** At 10 years, you have over 77% probability of profit in ALL markets. The worst-case scenarios also improve dramatically—maximum losses shrink from -61% to around -25% to -57%.
 
 ### 15-Year Holding Period: Near Certainty Emerges
 
 | Index | Probability of Profit | Best Case | Worst Case |
 |-------|----------------------|-----------|------------|
-| S&P 500 | **100%** | +661% | +25% |
-| NASDAQ-100 | 99.5% | +1,626% | -7% |
-| FTSE 100 | 96% | +123% | -12% |
-| Hang Seng | 83% | +269% | -35% |
-| Shanghai Composite | 87% | +253% | -46% |
-| Shenzhen Component | 81% | +482% | -44% |
-| CSI 300 | 89% | +575% | -32% |
+| S&P 500 | **100%** | +552% | +24% |
+| NASDAQ Composite | 99% | +962% | -12% |
+| FTSE 100 | 98% | +122% | -8% |
+| Hang Seng | 80% | +245% | -39% |
+| Shanghai Composite | 85% | +201% | -51% |
+| Shenzhen Component | 78% | +399% | -47% |
+| CSI 300 | 89% | +429% | -34% |
 
-**Key Insight:** The S&P 500 reaches 100% success rate at 15 years—meaning there has NEVER been a 15-year period where you would have lost money. Even the worst-case scenario is a +25% gain!
+**Key Insight:** The S&P 500 reaches 100% success rate at 15 years—meaning there has NEVER been a 15-year period where you would have lost money. Even the worst-case scenario is a +24% gain!
 
 ### 20-Year Holding Period: Time Conquers All
 
 | Index | Probability of Profit | Average Return | Minimum Return |
 |-------|----------------------|----------------|----------------|
-| S&P 500 | **100%** | +306% | **+60%** |
-| NASDAQ-100 | **100%** | +931% | **+53%** |
-| FTSE 100 | 89% | +55% | -22% |
-| Hang Seng | **100%** | +77% | **+21%** |
-| Shanghai Composite | **100%** | +104% | **+33%** |
-| Shenzhen Component | **100%** | +218% | **+120%** |
-| CSI 300 | **100%** | +222% | **+149%** |
+| S&P 500 | **100%** | +288% | **+57%** |
+| NASDAQ Composite | **100%** | +609% | **+57%** |
+| FTSE 100 | 95% | +51% | -23% |
+| Hang Seng | **100%** | +79% | **+15%** |
+| Shanghai Composite | **100%** | +114% | **+32%** |
+| Shenzhen Component | **100%** | +228% | **+96%** |
+| CSI 300 | **100%** | +258% | **+162%** |
 
-**Key Insight:** At 20 years, SIX out of SEVEN markets show 100% probability of positive returns. Even in the WORST 20-year period, investors in the S&P 500 gained at least 60%, and Shenzhen Component investors gained at least 120%!
+**Key Insight:** At 20 years, SIX out of SEVEN markets show 100% probability of positive returns. Even in the WORST 20-year period, investors in the S&P 500 gained at least 57%, and Shenzhen Component investors gained at least 96%!
 
 ---
 
@@ -123,7 +123,7 @@ When you invest for just one year, the outcome is highly uncertain:
 Holding Period →   1yr    5yr    10yr   15yr   20yr
                    ↓      ↓      ↓      ↓      ↓
 S&P 500           75% → 77% → 93% → 100% → 100%
-NASDAQ-100        78% → 89% → 93% → 100% → 100%
+NASDAQ Composite  74% → 90% → 93% →  99% → 100%
 Hang Seng         56% → 67% → 81% →  83% → 100%
 Shanghai          47% → 70% → 86% →  87% → 100%
 CSI 300           50% → 77% → 91% →  89% → 100%
@@ -158,7 +158,7 @@ Yet, investors who held through these storms came out ahead. **Market timing is 
 
 #### Rule 3: Diversification Still Matters
 While all markets trend upward over long periods, they don't move in lockstep:
-- US markets (S&P 500, NASDAQ-100) showed the highest long-term returns
+- US markets (S&P 500, NASDAQ Composite) showed the highest long-term returns
 - Chinese markets showed higher volatility but also higher potential gains
 - UK market (FTSE 100) showed more modest but stable returns
 
@@ -205,8 +205,8 @@ Our 25-year analysis across 7 major global indices proves this wisdom:
 
 If you can commit to holding your investments for 20 years:
 - You have historically had a **100% chance of profit** in most major markets
-- Your **minimum return** would have been +21% to +149% depending on the market
-- Your **average return** would have been +55% to +931%
+- Your **minimum return** would have been -23% to +162% depending on the market (with only FTSE 100 showing potential loss)
+- Your **average return** would have been +51% to +609%
 
 **Time doesn't just matter—it's everything.**
 
@@ -214,7 +214,7 @@ If you can commit to holding your investments for 20 years:
 
 ## Methodology Notes
 
-- **Data Period:** January 1, 2000 to December 5, 2025 (CSI 300 from January 2002)
+- **Data Period:** January 1, 2000 to December 8, 2025 (CSI 300 from January 2002)
 - **Data Sources:** Yahoo Finance, AkShare
 - **Calculation Method:** Rolling returns for each holding period
 - **Returns:** Price returns (dividends not included; actual returns would be higher)

@@ -6,11 +6,11 @@
 YOUR CHANCE OF MAKING MONEY
 Based on 25 Years of Data (2000-2025)
 
-Hold for 1 Year:   ████████░░░░░░░░░░░░  47-78%  ← Risky!
-Hold for 5 Years:  █████████████░░░░░░░  67-89%  ← Better
-Hold for 10 Years: █████████████████░░░  81-93%  ← Good
-Hold for 15 Years: ██████████████████░░  81-100% ← Great
-Hold for 20 Years: ████████████████████  88-100% ← Almost Certain!
+Hold for 1 Year:   ████████░░░░░░░░░░░░  47-75%  ← Risky!
+Hold for 5 Years:  █████████████░░░░░░░  64-90%  ← Better
+Hold for 10 Years: █████████████████░░░  77-93%  ← Good
+Hold for 15 Years: ██████████████████░░  78-100% ← Great
+Hold for 20 Years: ████████████████████  95-100% ← Almost Certain!
 ```
 
 ## The Simple Truth
@@ -18,8 +18,8 @@ Hold for 20 Years: ████████████████████ 
 | If you invest for... | Your chance of profit is... |
 |---------------------|----------------------------|
 | 1 year | About 50-75% (coin flip to good odds) |
-| 5 years | About 70-90% (odds in your favor) |
-| 10 years | About 85-95% (very likely to win) |
+| 5 years | About 64-90% (odds in your favor) |
+| 10 years | About 77-93% (very likely to win) |
 | 20 years | **Nearly 100%** (historically never lost) |
 
 ## What Happened to $10,000 Invested in 2000?
@@ -28,7 +28,7 @@ By December 2025:
 
 | Market | Your $10,000 became... |
 |--------|----------------------|
-| NASDAQ-100 | **$67,779** |
+| NASDAQ Composite | **$57,074** |
 | S&P 500 | **$47,212** |
 | Shenzhen Component | ~$30,000+ |
 | CSI 300 | ~$30,000+ |

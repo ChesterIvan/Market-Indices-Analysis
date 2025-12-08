@@ -13,7 +13,7 @@ class MarketIndexAnalyzer:
         # Major world market indices for long-term analysis (Yahoo Finance)
         self.yf_indices = {
             '^GSPC': 'S&P 500',           # US - Standard & Poor's 500
-            '^NDX': 'NASDAQ-100',          # US - Nasdaq-100 Index
+            '^IXIC': 'NASDAQ Composite',    # US - Nasdaq Composite Index
             '^FTSE': 'FTSE 100',           # UK - Financial Times Stock Exchange 100
             '^HSI': 'Hang Seng',           # Hong Kong - Hang Seng Index
             '000001.SS': 'Shanghai Composite',  # China - Shanghai Composite Index
@@ -26,7 +26,7 @@ class MarketIndexAnalyzer:
         # US indices via AkShare (backup/alternative source)
         self.akshare_us_indices = {
             '.INX': 'S&P 500',             # S&P 500 via Sina
-            '.NDX': 'NASDAQ-100',          # NASDAQ-100 via Sina
+            '.IXIC': 'NASDAQ Composite',    # NASDAQ Composite via Sina
         }
         self.data = pd.DataFrame()
         self.start_date = '2000-01-01'

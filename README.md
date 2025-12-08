@@ -20,7 +20,7 @@ A comprehensive analysis tool for studying long-term market index performance ac
 | Index | Symbol | Market |
 |-------|--------|--------|
 | S&P 500 | ^GSPC | US |
-| NASDAQ-100 | ^NDX | US |
+| NASDAQ Composite | ^IXIC | US |
 | FTSE 100 | ^FTSE | UK |
 | Hang Seng Index | ^HSI | Hong Kong |
 | Shanghai Composite | 000001.SS | China |
