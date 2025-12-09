@@ -310,7 +310,27 @@ class MarketIndexAnalyzer:
     
     def save_data_to_csv(self):
         """Save the fetched data to CSV for further analysis"""
-        self.data.to_csv('market_indices_data.csv')
+        # Reorder columns as requested
+        desired_order = [
+            'Shanghai Composite', 'Shenzhen Component', 'CSI 300', 
+            'S&P 500', 'NASDAQ Composite', 'FTSE 100', 'Hang Seng'
+        ]
+        
+        # Filter to include only columns that actually exist in the fetched data
+        # taking into account that some might have failed to download
+        available_columns = [col for col in desired_order if col in self.data.columns]
+        
+        # Add any other columns that might be in data but not in our specific order list
+        other_columns = [col for col in self.data.columns if col not in available_columns]
+        final_order = available_columns + other_columns
+        
+        # Create a copy with reordered columns
+        df_to_save = self.data[final_order].copy()
+        
+        # Rename index to snapshot_date
+        df_to_save.index.name = 'snapshot_date'
+        
+        df_to_save.to_csv('market_indices_data.csv')
         print("Saved raw data to 'market_indices_data.csv'")
 
 def get_date_input(prompt, default_value):
