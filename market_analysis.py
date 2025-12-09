@@ -16,12 +16,12 @@ class MarketIndexAnalyzer:
             '^IXIC': 'NASDAQ Composite',    # US - Nasdaq Composite Index
             '^FTSE': 'FTSE 100',           # UK - Financial Times Stock Exchange 100
             '^HSI': 'Hang Seng',           # Hong Kong - Hang Seng Index
-            '000001.SS': 'Shanghai Composite',  # China - Shanghai Composite Index
-            '399001.SZ': 'Shenzhen Component',  # China - Shenzhen Component Index
         }
         # China indices via AkShare (better historical data)
         self.akshare_china_indices = {
-            'sh000300': 'CSI 300',         # China - CSI 300 Index
+            'sh000001': 'Shanghai Composite',  # China - Shanghai Composite Index
+            'sz399001': 'Shenzhen Component',  # China - Shenzhen Component Index
+            'sh000300': 'CSI 300',             # China - CSI 300 Index
         }
         # US indices via AkShare (backup/alternative source)
         self.akshare_us_indices = {
@@ -313,15 +313,38 @@ class MarketIndexAnalyzer:
         self.data.to_csv('market_indices_data.csv')
         print("Saved raw data to 'market_indices_data.csv'")
 
+def get_date_input(prompt, default_value):
+    """Get date input from user with validation"""
+    while True:
+        user_input = input(f"{prompt} [{default_value}]: ").strip()
+        if not user_input:
+            return default_value
+        try:
+            datetime.strptime(user_input, '%Y-%m-%d')
+            return user_input
+        except ValueError:
+            print("Invalid date format. Please use YYYY-MM-DD format.")
+
 if __name__ == "__main__":
-    # Initialize the analyzer
-    analyzer = MarketIndexAnalyzer()
-    
-    # Fetch historical data from Jan 1, 2000 to present
     print("=" * 60)
     print("MARKET INDEX ANALYSIS - Time Matters for Investors")
     print("=" * 60)
     print()
+    
+    # Get date range from user
+    default_start = '2000-01-01'
+    default_end = datetime.now().strftime('%Y-%m-%d')
+    
+    print("Enter date range for analysis (press Enter for default):")
+    start_date = get_date_input("Start date (YYYY-MM-DD)", default_start)
+    end_date = get_date_input("End date (YYYY-MM-DD)", default_end)
+    
+    print()
+    
+    # Initialize the analyzer with user-specified dates
+    analyzer = MarketIndexAnalyzer()
+    analyzer.start_date = start_date
+    analyzer.end_date = end_date
     
     analyzer.fetch_data()
     
