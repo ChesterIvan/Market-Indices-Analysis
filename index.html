@@ -12,11 +12,15 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', 'SimHei', sans-serif;
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+        }
+
+        body[lang="zh"] {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'SimHei', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .container {
@@ -286,109 +290,165 @@
             border-radius: 4px;
             font-weight: bold;
         }
+
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            background: white;
+            padding: 8px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: #667eea;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .lang-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .lang-btn.active:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+                padding: 6px;
+            }
+
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 0.85em;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+    </div>
+
     <div class="container">
         <header>
-            <h1>⏰ Time Matters: Your Guide to Long-Term Wealth Building</h1>
-            <p class="subtitle">Based on 35 Years of Real Market Data Across 14 Global Markets</p>
+            <h1 data-i18n="title">⏰ Time Matters: Your Guide to Long-Term Wealth Building</h1>
+            <p class="subtitle" data-i18n="subtitle">Based on 35 Years of Real Market Data Across 14 Global Markets</p>
             
             <div class="hero-stats">
                 <div class="stat-card">
                     <div class="stat-number">98-100%</div>
-                    <div class="stat-label">Success Rate at 20 Years</div>
+                    <div class="stat-label" data-i18n="stat1">Success Rate at 20 Years</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">14</div>
-                    <div class="stat-label">Global Markets Analyzed</div>
+                    <div class="stat-label" data-i18n="stat2">Global Markets Analyzed</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">35+</div>
-                    <div class="stat-label">Years of Data</div>
+                    <div class="stat-label" data-i18n="stat3">Years of Data</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">11</div>
-                    <div class="stat-label">Countries/Regions</div>
+                    <div class="stat-label" data-i18n="stat4">Countries/Regions</div>
                 </div>
             </div>
         </header>
 
         <section id="main-message">
-            <div class="key-finding">
+            <div class="key-finding" data-i18n="main-message-key">
                 🎯 THE ONE THING YOU NEED TO KNOW: The longer you stay invested, the higher your chance of making money. At 20 years, you have a 98-100% chance of profit across major global markets.
             </div>
 
-            <h2>Why This Matters to You</h2>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">
+            <h2 data-i18n="why-matters-title">Why This Matters to You</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;" data-i18n="why-matters-p1">
                 Have you ever wondered: <strong>"When should I invest?"</strong> or <strong>"How long should I hold my investments?"</strong>
             </p>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">
+            <p style="font-size: 1.1em; margin-bottom: 20px;" data-i18n="why-matters-p2">
                 After analyzing 35 years of real market data from 14 major global markets, the answer is crystal clear:
             </p>
             
             <div class="quote">
-                "Time in the market beats timing the market."
-                <div class="quote-author">— Proven by 35 years of data</div>
+                <span data-i18n="quote-text">"Time in the market beats timing the market."</span>
+                <div class="quote-author" data-i18n="quote-author">— Proven by 35 years of data</div>
             </div>
         </section>
 
         <section id="probability">
-            <h2>Your Chance of Making Money</h2>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">
+            <h2 data-i18n="probability-title">Your Chance of Making Money</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;" data-i18n="probability-intro">
                 Here's what the data shows about your probability of making a profit based on how long you hold your investments:
             </p>
 
             <table class="probability-table">
                 <thead>
                     <tr>
-                        <th>Holding Period</th>
-                        <th>Your Chance of Profit</th>
-                        <th>What This Means</th>
+                        <th data-i18n="holding-period">Holding Period</th>
+                        <th data-i18n="chance-profit">Your Chance of Profit</th>
+                        <th data-i18n="what-means">What This Means</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>1 Year</strong></td>
+                        <td><strong data-i18n="1-year">1 Year</strong></td>
                         <td>49% - 81%</td>
-                        <td>Like flipping a coin - very risky!</td>
+                        <td data-i18n="1-year-desc">Like flipping a coin - very risky!</td>
                     </tr>
                     <tr>
-                        <td><strong>5 Years</strong></td>
+                        <td><strong data-i18n="5-years">5 Years</strong></td>
                         <td>67% - 86%</td>
-                        <td>Odds are in your favor, but still risky</td>
+                        <td data-i18n="5-years-desc">Odds are in your favor, but still risky</td>
                     </tr>
                     <tr>
-                        <td><strong>10 Years</strong></td>
+                        <td><strong data-i18n="10-years">10 Years</strong></td>
                         <td>84% - 92%</td>
-                        <td>Very likely to make money</td>
+                        <td data-i18n="10-years-desc">Very likely to make money</td>
                     </tr>
                     <tr>
-                        <td><strong>15 Years</strong></td>
+                        <td><strong data-i18n="15-years">15 Years</strong></td>
                         <td>88% - 100%</td>
-                        <td>Almost certain to profit</td>
+                        <td data-i18n="15-years-desc">Almost certain to profit</td>
                     </tr>
                     <tr style="background: #e8f5e9;">
-                        <td><strong>20 Years</strong></td>
+                        <td><strong data-i18n="20-years">20 Years</strong></td>
                         <td><strong>98% - 100%</strong></td>
-                        <td><strong>Historically, you almost never lose!</strong></td>
+                        <td><strong data-i18n="20-years-desc">Historically, you almost never lose!</strong></td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="chart-container">
                 <img src="positive_return_probability.png" alt="Probability of Positive Returns Over Time">
-                <p class="chart-caption">This chart shows how your probability of making money increases dramatically as you hold longer</p>
+                <p class="chart-caption" data-i18n="chart-caption-1">This chart shows how your probability of making money increases dramatically as you hold longer</p>
             </div>
 
-            <div class="tip-box">
+            <div class="tip-box" data-i18n="key-insight-1">
                 <strong>💡 Key Insight:</strong> If you can commit to holding your investments for 20 years, history shows you have a near 100% chance of making money in most major markets. Even in the worst-case scenario, investors in the S&P 500 gained at least 57% over 20 years!
             </div>
         </section>
 
         <section id="real-examples">
-            <h2>Real Numbers: What $10,000 Could Have Become</h2>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">
+            <h2 data-i18n="real-examples-title">Real Numbers: What $10,000 Could Have Become</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;" data-i18n="real-examples-intro">
                 Let's look at what would have happened if you invested $10,000 in 1990 and held until 2025 (35 years):
             </p>
 
@@ -396,46 +456,46 @@
                 <div class="comparison-card">
                     <h4>NASDAQ Composite</h4>
                     <div class="number" style="color: #4caf50;">$1,609,000</div>
-                    <p>Your $10,000 became 160x larger!</p>
+                    <p data-i18n="nasdaq-desc">Your $10,000 became 160x larger!</p>
                 </div>
                 <div class="comparison-card">
                     <h4>CSI 300</h4>
                     <div class="number" style="color: #4caf50;">$1,258,000</div>
-                    <p>125x your original investment</p>
+                    <p data-i18n="csi-desc">125x your original investment</p>
                 </div>
                 <div class="comparison-card">
                     <h4>S&P 500</h4>
                     <div class="number" style="color: #4caf50;">$288,000</div>
-                    <p>28x your original investment</p>
+                    <p data-i18n="sp500-desc">28x your original investment</p>
                 </div>
                 <div class="comparison-card">
                     <h4>FTSE 100</h4>
                     <div class="number" style="color: #4caf50;">$51,000</div>
-                    <p>Even the most conservative market more than 5x'd your money</p>
+                    <p data-i18n="ftse-desc">Even the most conservative market more than 5x'd your money</p>
                 </div>
             </div>
 
             <div class="chart-container">
                 <img src="cumulative_returns.png" alt="Cumulative Returns Over Time">
-                <p class="chart-caption">Long-term growth of major market indices (log scale to show growth patterns)</p>
+                <p class="chart-caption" data-i18n="chart-caption-2">Long-term growth of major market indices (log scale to show growth patterns)</p>
                 <p style="margin-top: 15px;">
-                    <a href="normalized_performance.html" target="_blank" class="cta-button" style="display: inline-block; padding: 10px 25px; font-size: 0.9em;">
+                    <a href="normalized_performance.html" target="_blank" class="cta-button" style="display: inline-block; padding: 10px 25px; font-size: 0.9em;" data-i18n="view-chart">
                         📊 View Interactive Chart
                     </a>
                 </p>
             </div>
 
-            <div class="tip-box">
+            <div class="tip-box" data-i18n="remember-tip">
                 <strong>💡 Remember:</strong> These are price returns only. With dividends reinvested, your returns would be even higher!
             </div>
         </section>
 
         <section id="market-crashes">
-            <h2>What About Market Crashes?</h2>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">
+            <h2 data-i18n="crashes-title">What About Market Crashes?</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;" data-i18n="crashes-intro">
                 You might be thinking: <em>"But what about all those market crashes I've heard about?"</em>
             </p>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">
+            <p style="font-size: 1.1em; margin-bottom: 20px;" data-i18n="crashes-intro2">
                 Our analysis includes some of the worst market crashes in history:
             </p>
 
@@ -446,76 +506,76 @@
                 <li>📉 Various Asian market corrections</li>
             </ul>
 
-            <div class="key-finding" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
+            <div class="key-finding" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);" data-i18n="crashes-recovery">
                 ✅ Every single major crash in the last 35 years has been followed by a recovery. Investors who held through these storms came out ahead.
             </div>
 
-            <div class="warning-box">
+            <div class="warning-box" data-i18n="crashes-warning">
                 <strong>⚠️ Important:</strong> Market timing is nearly impossible. Even professional investors struggle to predict when to buy and sell. But time IN the market? That's something everyone can control.
             </div>
         </section>
 
         <section id="market-timing-cost">
-            <h2>The Hidden Cost of Trying to Time the Market</h2>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">
+            <h2 data-i18n="timing-title">The Hidden Cost of Trying to Time the Market</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;" data-i18n="timing-intro">
                 You might think: <em>"I'll just wait for the right time to invest"</em> or <em>"I'll sell before a crash and buy back in after."</em>
             </p>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">
+            <p style="font-size: 1.1em; margin-bottom: 20px;" data-i18n="timing-intro2">
                 But here's the shocking truth: <strong>Missing just a few of the market's best days can cost you most of your potential returns.</strong>
             </p>
 
             <div class="chart-container">
                 <img src="market_timing_cost.png" alt="The Cost of Market Timing: Missing the Best Days">
-                <p class="chart-caption">What happens if you try to time the market and miss the best trading days? (Based on S&P 500 data from 1990-2025)</p>
+                <p class="chart-caption" data-i18n="timing-chart-caption">What happens if you try to time the market and miss the best trading days? (Based on S&P 500 data from 1990-2025)</p>
             </div>
 
-            <div class="key-finding" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);">
+            <div class="key-finding" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);" data-i18n="timing-key-finding">
                 💥 MISSING JUST 10 OF THE BEST DAYS COSTS YOU OVER 55% OF YOUR POTENTIAL RETURNS!<br><br>
                 If you invested $10,000 and stayed fully invested, you'd have $190,345.<br>
                 But if you missed just the 10 best days, you'd only have $84,752 - losing $105,593!
             </div>
 
             <div style="margin: 30px 0;">
-                <h3>What the Data Shows</h3>
-                <p style="font-size: 1.1em; margin-top: 10px;">
+                <h3 data-i18n="timing-data-title">What the Data Shows</h3>
+                <p style="font-size: 1.1em; margin-top: 10px;" data-i18n="timing-data-intro">
                     We analyzed what would happen if you tried to time the market and missed the best trading days:
                 </p>
                 
                 <div class="comparison-grid" style="margin-top: 20px;">
                     <div class="comparison-card" style="background: #e8f5e9;">
-                        <h4>Fully Invested</h4>
+                        <h4 data-i18n="fully-invested">Fully Invested</h4>
                         <div class="number" style="color: #2e7d32;">$190,345</div>
                         <p>8.55% annual return</p>
-                        <p style="font-size: 0.9em; color: #666;">Baseline</p>
+                        <p style="font-size: 0.9em; color: #666;" data-i18n="baseline">Baseline</p>
                     </div>
                     <div class="comparison-card" style="background: #fff3e0;">
-                        <h4>Miss 5 Best Days</h4>
+                        <h4 data-i18n="miss-5">Miss 5 Best Days</h4>
                         <div class="number" style="color: #f57c00;">$117,616</div>
                         <p>7.10% annual return</p>
-                        <p style="font-size: 0.9em; color: #d32f2f;">Lost 38%!</p>
+                        <p style="font-size: 0.9em; color: #d32f2f;" data-i18n="lost-38">Lost 38%!</p>
                     </div>
                     <div class="comparison-card" style="background: #ffebee;">
-                        <h4>Miss 10 Best Days</h4>
+                        <h4 data-i18n="miss-10">Miss 10 Best Days</h4>
                         <div class="number" style="color: #d32f2f;">$84,752</div>
                         <p>6.13% annual return</p>
-                        <p style="font-size: 0.9em; color: #d32f2f;">Lost 55%!</p>
+                        <p style="font-size: 0.9em; color: #d32f2f;" data-i18n="lost-55">Lost 55%!</p>
                     </div>
                     <div class="comparison-card" style="background: #fce4ec;">
-                        <h4>Miss 40 Best Days</h4>
+                        <h4 data-i18n="miss-40">Miss 40 Best Days</h4>
                         <div class="number" style="color: #c2185b;">$20,388</div>
                         <p>2.00% annual return</p>
-                        <p style="font-size: 0.9em; color: #c2185b;">Lost 89%!</p>
+                        <p style="font-size: 0.9em; color: #c2185b;" data-i18n="lost-89">Lost 89%!</p>
                     </div>
                 </div>
             </div>
 
-            <div class="warning-box" style="border-left-color: #d32f2f; background: #ffebee;">
+            <div class="warning-box" style="border-left-color: #d32f2f; background: #ffebee;" data-i18n="timing-warning">
                 <strong>🚨 The Critical Problem:</strong> The best trading days often occur during periods of high volatility, right after the worst days. If you're out of the market trying to avoid losses, you'll likely miss the biggest gains too. The market's best days frequently happen right after its worst days - you can't have one without risking the other!
             </div>
 
             <div style="margin: 30px 0; padding: 25px; background: #f8f9fa; border-radius: 15px;">
-                <h3>Real-World Example</h3>
-                <p style="font-size: 1.1em; margin-top: 10px;">
+                <h3 data-i18n="timing-example-title">Real-World Example</h3>
+                <p style="font-size: 1.1em; margin-top: 10px;" data-i18n="timing-example-intro">
                     Imagine you invested $10,000 in the S&P 500 in 1990 and held until 2025:
                 </p>
                 <ul style="font-size: 1.1em; margin-left: 30px; margin-top: 15px;">
@@ -526,18 +586,18 @@
                 </ul>
             </div>
 
-            <div class="tip-box">
+            <div class="tip-box" data-i18n="timing-solution">
                 <strong>💡 The Solution:</strong> <strong>Stay invested!</strong> You can't predict which days will be the best, and trying to time the market often means missing those critical days. The best strategy is to invest regularly and hold for the long term - exactly what our 35-year analysis proves works.
             </div>
         </section>
 
         <section id="life-stages">
-            <h2>What Should YOU Do? (Based on Your Age)</h2>
+            <h2 data-i18n="life-stages-title">What Should YOU Do? (Based on Your Age)</h2>
 
             <div class="life-stage">
-                <h4>👶 In Your 20s-30s? You Have the Ultimate Advantage: TIME</h4>
+                <h4 data-i18n="young-title">👶 In Your 20s-30s? You Have the Ultimate Advantage: TIME</h4>
                 <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Invest as much as you can afford - you have 30-40 years ahead</li>
+                    <li data-i18n="young-desc">Invest as much as you can afford - you have 30-40 years ahead</li>
                     <li>Don't check your portfolio daily - check it yearly</li>
                     <li>Market crashes are your FRIEND - you're buying at discounts!</li>
                     <li>Focus on broad market index funds (like S&P 500, NASDAQ)</li>
@@ -545,9 +605,9 @@
             </div>
 
             <div class="life-stage">
-                <h4>👨‍💼 In Your 40s-50s? You Still Have Plenty of Time</h4>
+                <h4 data-i18n="middle-title">👨‍💼 In Your 40s-50s? You Still Have Plenty of Time</h4>
                 <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>You still have 15-25 years until retirement - that's enough for near-certain gains</li>
+                    <li data-i18n="middle-desc">You still have 15-25 years until retirement - that's enough for near-certain gains</li>
                     <li>Maintain significant equity exposure (60-80% in stocks)</li>
                     <li>Start thinking about gradual diversification</li>
                     <li>Remember: even at 15 years, success rates exceed 88-100%</li>
@@ -555,9 +615,9 @@
             </div>
 
             <div class="life-stage">
-                <h4>👴 In Your 60s+? Don't Abandon Stocks Entirely</h4>
+                <h4 data-i18n="senior-title">👴 In Your 60s+? Don't Abandon Stocks Entirely</h4>
                 <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>You may still have 20-30 years of life ahead</li>
+                    <li data-i18n="senior-desc">You may still have 20-30 years of life ahead</li>
                     <li>Don't abandon equities entirely - keep 40-60% in stocks for long-term growth</li>
                     <li>Use the "bucket strategy": keep near-term expenses in safer investments</li>
                     <li>Long-term money can still benefit from market growth</li>
@@ -566,14 +626,14 @@
         </section>
 
         <section id="diversification">
-            <h2>The Power of Diversification</h2>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">
+            <h2 data-i18n="diversification-title">The Power of Diversification</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;" data-i18n="diversification-intro">
                 While all markets trend upward over long periods, they don't move in lockstep. Here's what we found:
             </p>
 
             <div class="chart-container">
                 <img src="correlation_heatmap.png" alt="Market Correlation Heatmap">
-                <p class="chart-caption">How different markets move together (darker = more correlated)</p>
+                <p class="chart-caption" data-i18n="diversification-chart-caption">How different markets move together (darker = more correlated)</p>
             </div>
 
             <div class="comparison-grid">
@@ -595,38 +655,38 @@
                 </div>
             </div>
 
-            <div class="tip-box">
+            <div class="tip-box" data-i18n="diversification-strategy">
                 <strong>💡 Strategy:</strong> A diversified portfolio across different regions can smooth your journey. When one market is down, another might be up. This reduces your overall risk while maintaining growth potential.
             </div>
         </section>
 
         <section id="three-rules">
-            <h2>The Three Golden Rules</h2>
+            <h2 data-i18n="rules-title">The Three Golden Rules</h2>
 
             <div style="margin: 30px 0;">
-                <h3>1️⃣ Start Early, Stay Long</h3>
-                <p style="font-size: 1.1em; margin-top: 10px;">
+                <h3 data-i18n="rule1-title">1️⃣ Start Early, Stay Long</h3>
+                <p style="font-size: 1.1em; margin-top: 10px;" data-i18n="rule1-desc">
                     The data is unequivocal: <span class="highlight">time is your greatest ally</span>. An investor who stays in the market for 20 years has historically never lost money in most major markets. The earlier you start, the more 20-year periods you can accumulate.
                 </p>
             </div>
 
             <div style="margin: 30px 0;">
-                <h3>2️⃣ Don't Panic During Downturns</h3>
-                <p style="font-size: 1.1em; margin-top: 10px;">
+                <h3 data-i18n="rule2-title">2️⃣ Don't Panic During Downturns</h3>
+                <p style="font-size: 1.1em; margin-top: 10px;" data-i18n="rule2-desc">
                     Market crashes feel scary, but they're temporary. Our data proves that <span class="highlight">every major crash has been followed by recovery</span>. Selling during a crash locks in losses. Holding through it allows you to participate in the recovery. <strong>Remember:</strong> The best trading days often happen right after the worst days. If you're out of the market trying to avoid losses, you'll miss the biggest gains too - potentially losing 55% or more of your returns by missing just 10 of the best days!
                 </p>
             </div>
 
             <div style="margin: 30px 0;">
-                <h3>3️⃣ Diversification Still Matters</h3>
-                <p style="font-size: 1.1em; margin-top: 10px;">
+                <h3 data-i18n="rule3-title">3️⃣ Diversification Still Matters</h3>
+                <p style="font-size: 1.1em; margin-top: 10px;" data-i18n="rule3-desc">
                     While all markets trend upward over long periods, they don't move together. A diversified portfolio across regions can smooth your journey and reduce risk while maintaining growth potential.
                 </p>
             </div>
         </section>
 
         <section id="bottom-line">
-            <h2>The Bottom Line</h2>
+            <h2 data-i18n="bottom-line-title">The Bottom Line</h2>
             
             <div class="quote" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
                 "In the short run, the market is a voting machine. In the long run, it is a weighing machine."
@@ -634,27 +694,27 @@
             </div>
 
             <div style="margin: 30px 0;">
-                <h3>If You Remember Nothing Else:</h3>
+                <h3 data-i18n="bottom-line-remember">If You Remember Nothing Else:</h3>
                 <div class="comparison-grid" style="margin-top: 20px;">
                     <div class="comparison-card" style="background: #ffebee;">
-                        <h4>Short-term (1 year)</h4>
-                        <div class="number" style="color: #d32f2f;">Gambling</div>
-                        <p>Essentially unpredictable</p>
+                        <h4 data-i18n="short-term">Short-term (1 year)</h4>
+                        <div class="number" style="color: #d32f2f;" data-i18n="gambling">Gambling</div>
+                        <p data-i18n="gambling-desc">Essentially unpredictable</p>
                     </div>
                     <div class="comparison-card" style="background: #fff3e0;">
-                        <h4>Medium-term (5 years)</h4>
-                        <div class="number" style="color: #f57c00;">Risky</div>
-                        <p>Favors you, but losses possible</p>
+                        <h4 data-i18n="medium-term">Medium-term (5 years)</h4>
+                        <div class="number" style="color: #f57c00;" data-i18n="risky">Risky</div>
+                        <p data-i18n="risky-desc">Favors you, but losses possible</p>
                     </div>
                     <div class="comparison-card" style="background: #e8f5e9;">
-                        <h4>Long-term (20 years)</h4>
-                        <div class="number" style="color: #388e3c;">Wealth Building</div>
-                        <p>Almost guaranteed to be positive</p>
+                        <h4 data-i18n="long-term">Long-term (20 years)</h4>
+                        <div class="number" style="color: #388e3c;" data-i18n="wealth-building">Wealth Building</div>
+                        <p data-i18n="wealth-desc">Almost guaranteed to be positive</p>
                     </div>
                 </div>
             </div>
 
-            <div class="key-finding">
+            <div class="key-finding" data-i18n="magic-number">
                 🎯 THE MAGIC NUMBER: 20 YEARS<br><br>
                 If you can commit to holding your investments for 20 years:<br>
                 • You have historically had a <strong>100% chance of profit</strong> in most major markets<br>
@@ -665,48 +725,48 @@
         </section>
 
         <section id="next-steps">
-            <h2>Your Next Steps</h2>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">
+            <h2 data-i18n="next-steps-title">Your Next Steps</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;" data-i18n="next-steps-intro">
                 Ready to start your wealth-building journey? Here's what to do:
             </p>
 
             <div class="life-stage">
-                <h4>1. Start Today</h4>
-                <p>The best time to invest was 20 years ago. The second best time is TODAY. Every day you wait is a day of potential growth lost.</p>
+                <h4 data-i18n="step1-title">1. Start Today</h4>
+                <p data-i18n="step1-desc">The best time to invest was 20 years ago. The second best time is TODAY. Every day you wait is a day of potential growth lost.</p>
             </div>
 
             <div class="life-stage">
-                <h4>2. Invest Regularly</h4>
-                <p>Set up automatic monthly investments. This strategy (called "dollar-cost averaging") helps you buy more when prices are low and less when prices are high.</p>
+                <h4 data-i18n="step2-title">2. Invest Regularly</h4>
+                <p data-i18n="step2-desc">Set up automatic monthly investments. This strategy (called "dollar-cost averaging") helps you buy more when prices are low and less when prices are high.</p>
             </div>
 
             <div class="life-stage">
-                <h4>3. Choose Broad Market Index Funds</h4>
-                <p>For most people, low-cost index funds that track major markets (like S&P 500, NASDAQ, or global indices) are the best choice. They're simple, diversified, and historically perform well.</p>
+                <h4 data-i18n="step3-title">3. Choose Broad Market Index Funds</h4>
+                <p data-i18n="step3-desc">For most people, low-cost index funds that track major markets (like S&P 500, NASDAQ, or global indices) are the best choice. They're simple, diversified, and historically perform well.</p>
             </div>
 
             <div class="life-stage">
-                <h4>4. Stay the Course</h4>
-                <p>Don't check your portfolio daily. Don't panic during downturns. Remember: time is on your side. The longer you hold, the higher your probability of success.</p>
+                <h4 data-i18n="step4-title">4. Stay the Course</h4>
+                <p data-i18n="step4-desc">Don't check your portfolio daily. Don't panic during downturns. Remember: time is on your side. The longer you hold, the higher your probability of success.</p>
             </div>
 
             <div style="text-align: center; margin-top: 30px;">
-                <a href="#main-message" class="cta-button">Start Your Investment Journey</a>
+                <a href="#main-message" class="cta-button" data-i18n="start-journey">Start Your Investment Journey</a>
             </div>
         </section>
 
         <footer>
-            <h3>About This Analysis</h3>
-            <p style="margin-top: 15px;">
+            <h3 data-i18n="footer-about">About This Analysis</h3>
+            <p style="margin-top: 15px;" data-i18n="footer-desc">
                 This analysis is based on 35 years of historical data (January 1990 to December 2025) from 14 major global market indices across 11 countries/regions.
             </p>
             <p style="margin-top: 10px;">
-                <strong>Markets Analyzed:</strong> S&P 500, NASDAQ Composite, FTSE 100, Hang Seng, Nikkei 225, S&P/TSX Composite, FTSE Bursa Malaysia KLCI, CAC 40, DAX, Straits Times Index, S&P/ASX 200, Shanghai Composite, Shenzhen Component, CSI 300
+                <strong data-i18n="footer-markets">Markets Analyzed:</strong> S&P 500, NASDAQ Composite, FTSE 100, Hang Seng, Nikkei 225, S&P/TSX Composite, FTSE Bursa Malaysia KLCI, CAC 40, DAX, Straits Times Index, S&P/ASX 200, Shanghai Composite, Shenzhen Component, CSI 300
             </p>
             <p style="margin-top: 20px; font-size: 0.9em; color: #95a5a6;">
-                <strong>Disclaimer:</strong> This analysis is for educational purposes only. Past performance does not guarantee future results. However, the patterns observed across 35 years and 14 different markets provide strong evidence for the benefits of long-term investing. Always consult with a qualified financial advisor before making investment decisions.
+                <strong data-i18n="footer-disclaimer">Disclaimer:</strong> <span data-i18n="footer-disclaimer-text">This analysis is for educational purposes only. Past performance does not guarantee future results. However, the patterns observed across 35 years and 14 different markets provide strong evidence for the benefits of long-term investing. Always consult with a qualified financial advisor before making investment decisions.</span>
             </p>
-            <p style="margin-top: 15px; font-size: 0.9em; color: #95a5a6;">
+            <p style="margin-top: 15px; font-size: 0.9em; color: #95a5a6;" data-i18n="footer-generated">
                 Report Generated: December 2025 | Market Indices Analysis Project
             </p>
         </footer>
@@ -748,6 +808,302 @@
             section.style.transform = 'translateY(20px)';
             section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(section);
+        });
+
+        // ========== BILINGUAL TRANSLATION SYSTEM ==========
+        const translations = {
+            en: {
+                // Header
+                'title': '⏰ Time Matters: Your Guide to Long-Term Wealth Building',
+                'subtitle': 'Based on 35 Years of Real Market Data Across 14 Global Markets',
+                'stat1': 'Success Rate at 20 Years',
+                'stat2': 'Global Markets Analyzed',
+                'stat3': 'Years of Data',
+                'stat4': 'Countries/Regions',
+                // Main message
+                'main-message-key': '🎯 THE ONE THING YOU NEED TO KNOW: The longer you stay invested, the higher your chance of making money. At 20 years, you have a 98-100% chance of profit across major global markets.',
+                'why-matters-title': 'Why This Matters to You',
+                'why-matters-p1': 'Have you ever wondered: <strong>"When should I invest?"</strong> or <strong>"How long should I hold my investments?"</strong>',
+                'why-matters-p2': 'After analyzing 35 years of real market data from 14 major global markets, the answer is crystal clear:',
+                'quote-text': '"Time in the market beats timing the market."',
+                'quote-author': '— Proven by 35 years of data',
+                // Probability section
+                'probability-title': 'Your Chance of Making Money',
+                'probability-intro': 'Here\'s what the data shows about your probability of making a profit based on how long you hold your investments:',
+                'holding-period': 'Holding Period',
+                'chance-profit': 'Your Chance of Profit',
+                'what-means': 'What This Means',
+                '1-year': '1 Year',
+                '5-years': '5 Years',
+                '10-years': '10 Years',
+                '15-years': '15 Years',
+                '20-years': '20 Years',
+                '1-year-desc': 'Like flipping a coin - very risky!',
+                '5-years-desc': 'Odds are in your favor, but still risky',
+                '10-years-desc': 'Very likely to make money',
+                '15-years-desc': 'Almost certain to profit',
+                '20-years-desc': 'Historically, you almost never lose!',
+                'chart-caption-1': 'This chart shows how your probability of making money increases dramatically as you hold longer',
+                'key-insight-1': '💡 Key Insight: If you can commit to holding your investments for 20 years, history shows you have a near 100% chance of making money in most major markets. Even in the worst-case scenario, investors in the S&P 500 gained at least 57% over 20 years!',
+                // Real examples
+                'real-examples-title': 'Real Numbers: What $10,000 Could Have Become',
+                'real-examples-intro': 'Let\'s look at what would have happened if you invested $10,000 in 1990 and held until 2025 (35 years):',
+                'nasdaq-desc': 'Your $10,000 became 160x larger!',
+                'csi-desc': '125x your original investment',
+                'sp500-desc': '28x your original investment',
+                'ftse-desc': 'Even the most conservative market more than 5x\'d your money',
+                'chart-caption-2': 'Long-term growth of major market indices (log scale to show growth patterns)',
+                'view-chart': '📊 View Interactive Chart',
+                'remember-tip': '💡 Remember: These are price returns only. With dividends reinvested, your returns would be even higher!',
+                // Market crashes
+                'crashes-title': 'What About Market Crashes?',
+                'crashes-intro': 'You might be thinking: <em>"But what about all those market crashes I\'ve heard about?"</em>',
+                'crashes-intro2': 'Our analysis includes some of the worst market crashes in history:',
+                'crashes-recovery': '✅ Every single major crash in the last 35 years has been followed by a recovery. Investors who held through these storms came out ahead.',
+                'crashes-warning': '⚠️ Important: Market timing is nearly impossible. Even professional investors struggle to predict when to buy and sell. But time IN the market? That\'s something everyone can control.',
+                // Market timing cost
+                'timing-title': 'The Hidden Cost of Trying to Time the Market',
+                'timing-intro': 'You might think: <em>"I\'ll just wait for the right time to invest"</em> or <em>"I\'ll sell before a crash and buy back in after."</em>',
+                'timing-intro2': 'But here\'s the shocking truth: <strong>Missing just a few of the market\'s best days can cost you most of your potential returns.</strong>',
+                'timing-chart-caption': 'What happens if you try to time the market and miss the best trading days? (Based on S&P 500 data from 1990-2025)',
+                'timing-key-finding': '💥 MISSING JUST 10 OF THE BEST DAYS COSTS YOU OVER 55% OF YOUR POTENTIAL RETURNS!<br><br>If you invested $10,000 and stayed fully invested, you\'d have $190,345.<br>But if you missed just the 10 best days, you\'d only have $84,752 - losing $105,593!',
+                'timing-data-title': 'What the Data Shows',
+                'timing-data-intro': 'We analyzed what would happen if you tried to time the market and missed the best trading days:',
+                'fully-invested': 'Fully Invested',
+                'miss-5': 'Miss 5 Best Days',
+                'miss-10': 'Miss 10 Best Days',
+                'miss-40': 'Miss 40 Best Days',
+                'baseline': 'Baseline',
+                'lost-38': 'Lost 38%!',
+                'lost-55': 'Lost 55%!',
+                'lost-89': 'Lost 89%!',
+                'timing-warning': '🚨 The Critical Problem: The best trading days often occur during periods of high volatility, right after the worst days. If you\'re out of the market trying to avoid losses, you\'ll likely miss the biggest gains too. The market\'s best days frequently happen right after its worst days - you can\'t have one without risking the other!',
+                'timing-example-title': 'Real-World Example',
+                'timing-example-intro': 'Imagine you invested $10,000 in the S&P 500 in 1990 and held until 2025:',
+                'timing-solution': '💡 The Solution: <strong>Stay invested!</strong> You can\'t predict which days will be the best, and trying to time the market often means missing those critical days. The best strategy is to invest regularly and hold for the long term - exactly what our 35-year analysis proves works.',
+                // Life stages
+                'life-stages-title': 'What Should YOU Do? (Based on Your Age)',
+                'young-title': '👶 In Your 20s-30s? You Have the Ultimate Advantage: TIME',
+                'young-desc': 'Invest as much as you can afford - you have 30-40 years ahead',
+                'middle-title': '👨‍💼 In Your 40s-50s? You Still Have Plenty of Time',
+                'middle-desc': 'You still have 15-25 years until retirement - that\'s enough for near-certain gains',
+                'senior-title': '👴 In Your 60s+? Don\'t Abandon Stocks Entirely',
+                'senior-desc': 'You may still have 20-30 years of life ahead',
+                // Diversification
+                'diversification-title': 'The Power of Diversification',
+                'diversification-intro': 'While all markets trend upward over long periods, they don\'t move in lockstep. Here\'s what we found:',
+                'diversification-chart-caption': 'How different markets move together (darker = more correlated)',
+                'diversification-strategy': '💡 Strategy: A diversified portfolio across different regions can smooth your journey. When one market is down, another might be up. This reduces your overall risk while maintaining growth potential.',
+                // Three rules
+                'rules-title': 'The Three Golden Rules',
+                'rule1-title': '1️⃣ Start Early, Stay Long',
+                'rule1-desc': 'The data is unequivocal: <span class="highlight">time is your greatest ally</span>. An investor who stays in the market for 20 years has historically never lost money in most major markets. The earlier you start, the more 20-year periods you can accumulate.',
+                'rule2-title': '2️⃣ Don\'t Panic During Downturns',
+                'rule2-desc': 'Market crashes feel scary, but they\'re temporary. Our data proves that <span class="highlight">every major crash has been followed by recovery</span>. Selling during a crash locks in losses. Holding through it allows you to participate in the recovery. <strong>Remember:</strong> The best trading days often happen right after the worst days. If you\'re out of the market trying to avoid losses, you\'ll miss the biggest gains too - potentially losing 55% or more of your returns by missing just 10 of the best days!',
+                'rule3-title': '3️⃣ Diversification Still Matters',
+                'rule3-desc': 'While all markets trend upward over long periods, they don\'t move together. A diversified portfolio across regions can smooth your journey and reduce risk while maintaining growth potential.',
+                // Bottom line
+                'bottom-line-title': 'The Bottom Line',
+                'bottom-line-remember': 'If You Remember Nothing Else:',
+                'short-term': 'Short-term (1 year)',
+                'medium-term': 'Medium-term (5 years)',
+                'long-term': 'Long-term (20 years)',
+                'gambling': 'Gambling',
+                'risky': 'Risky',
+                'wealth-building': 'Wealth Building',
+                'gambling-desc': 'Essentially unpredictable',
+                'risky-desc': 'Favors you, but losses possible',
+                'wealth-desc': 'Almost guaranteed to be positive',
+                'magic-number': '🎯 THE MAGIC NUMBER: 20 YEARS<br><br>If you can commit to holding your investments for 20 years:<br>• You have historically had a <strong>100% chance of profit</strong> in most major markets<br>• Your <strong>minimum return</strong> would have been +2% to +162% depending on the market<br>• Your <strong>average return</strong> would have been +51% to +609%<br><br><strong>Time doesn\'t just matter—it\'s everything.</strong>',
+                // Next steps
+                'next-steps-title': 'Your Next Steps',
+                'next-steps-intro': 'Ready to start your wealth-building journey? Here\'s what to do:',
+                'step1-title': '1. Start Today',
+                'step1-desc': 'The best time to invest was 20 years ago. The second best time is TODAY. Every day you wait is a day of potential growth lost.',
+                'step2-title': '2. Invest Regularly',
+                'step2-desc': 'Set up automatic monthly investments. This strategy (called "dollar-cost averaging") helps you buy more when prices are low and less when prices are high.',
+                'step3-title': '3. Choose Broad Market Index Funds',
+                'step3-desc': 'For most people, low-cost index funds that track major markets (like S&P 500, NASDAQ, or global indices) are the best choice. They\'re simple, diversified, and historically perform well.',
+                'step4-title': '4. Stay the Course',
+                'step4-desc': 'Don\'t check your portfolio daily. Don\'t panic during downturns. Remember: time is on your side. The longer you hold, the higher your probability of success.',
+                'start-journey': 'Start Your Investment Journey',
+                // Footer
+                'footer-about': 'About This Analysis',
+                'footer-desc': 'This analysis is based on 35 years of historical data (January 1990 to December 2025) from 14 major global market indices across 11 countries/regions.',
+                'footer-markets': 'Markets Analyzed:',
+                'footer-disclaimer': 'Disclaimer:',
+                'footer-disclaimer-text': 'This analysis is for educational purposes only. Past performance does not guarantee future results. However, the patterns observed across 35 years and 14 different markets provide strong evidence for the benefits of long-term investing. Always consult with a qualified financial advisor before making investment decisions.',
+                'footer-generated': 'Report Generated: December 2025 | Market Indices Analysis Project'
+            },
+            zh: {
+                // Header
+                'title': '⏰ 时间至关重要：长期财富积累指南',
+                'subtitle': '基于14个全球市场35年的真实市场数据',
+                'stat1': '20年成功率',
+                'stat2': '分析的全球市场',
+                'stat3': '数据年限',
+                'stat4': '国家/地区',
+                // Main message
+                'main-message-key': '🎯 您需要知道的一件事：投资时间越长，赚钱的概率越高。20年投资期，在主要全球市场中您有98-100%的盈利概率。',
+                'why-matters-title': '为什么这对您很重要',
+                'why-matters-p1': '您是否曾经想过：<strong>"我应该什么时候投资？"</strong> 或 <strong>"我应该持有多长时间？"</strong>',
+                'why-matters-p2': '在分析了14个主要全球市场35年的真实市场数据后，答案非常明确：',
+                'quote-text': '"在市场中停留的时间胜过把握市场时机。"',
+                'quote-author': '— 35年数据证明',
+                // Probability section
+                'probability-title': '您的盈利概率',
+                'probability-intro': '以下是数据显示的，基于您持有投资时间长短的盈利概率：',
+                'holding-period': '持有期限',
+                'chance-profit': '盈利概率',
+                'what-means': '这意味着什么',
+                '1-year': '1年',
+                '5-years': '5年',
+                '10-years': '10年',
+                '15-years': '15年',
+                '20-years': '20年',
+                '1-year-desc': '就像抛硬币 - 风险很大！',
+                '5-years-desc': '胜算在您这边，但仍然有风险',
+                '10-years-desc': '很可能赚钱',
+                '15-years-desc': '几乎肯定盈利',
+                '20-years-desc': '历史上，您几乎从未亏损！',
+                'chart-caption-1': '此图表显示，随着持有时间延长，您的盈利概率如何急剧增加',
+                'key-insight-1': '💡 关键洞察：如果您能承诺持有投资20年，历史表明您在大多数主要市场中几乎有100%的赚钱机会。即使在最坏的情况下，标普500指数的投资者在20年内至少获得了57%的收益！',
+                // Real examples
+                'real-examples-title': '真实数字：10,000美元可能变成多少',
+                'real-examples-intro': '让我们看看如果您在1990年投资10,000美元并持有到2025年（35年）会发生什么：',
+                'nasdaq-desc': '您的10,000美元变成了160倍！',
+                'csi-desc': '原始投资的125倍',
+                'sp500-desc': '原始投资的28倍',
+                'ftse-desc': '即使是最保守的市场也使您的资金增长了5倍以上',
+                'chart-caption-2': '主要市场指数的长期增长（对数刻度显示增长模式）',
+                'view-chart': '📊 查看交互式图表',
+                'remember-tip': '💡 记住：这些只是价格回报。如果加上股息再投资，您的回报会更高！',
+                // Market crashes
+                'crashes-title': '市场崩盘怎么办？',
+                'crashes-intro': '您可能在想：<em>"但我听说过的所有那些市场崩盘呢？"</em>',
+                'crashes-intro2': '我们的分析包括历史上一些最严重的市场崩盘：',
+                'crashes-recovery': '✅ 过去35年中，每一次重大崩盘之后都出现了复苏。坚持持有投资的投资者都获得了收益。',
+                'crashes-warning': '⚠️ 重要提示：市场时机把握几乎不可能。即使是专业投资者也很难预测何时买卖。但在市场中停留的时间？这是每个人都能控制的。',
+                // Market timing cost
+                'timing-title': '试图把握市场时机的隐藏成本',
+                'timing-intro': '您可能认为：<em>"我会等待合适的投资时机"</em> 或 <em>"我会在崩盘前卖出，然后在之后买回。"</em>',
+                'timing-intro2': '但这是令人震惊的真相：<strong>错过市场最佳交易日中的几天，可能会让您损失大部分潜在回报。</strong>',
+                'timing-chart-caption': '如果您试图把握市场时机并错过最佳交易日会发生什么？（基于1990-2025年标普500数据）',
+                'timing-key-finding': '💥 仅错过10个最佳交易日就会让您损失超过55%的潜在回报！<br><br>如果您投资10,000美元并保持完全投资，您将拥有190,345美元。<br>但如果您仅错过10个最佳交易日，您只有84,752美元 - 损失了105,593美元！',
+                'timing-data-title': '数据显示',
+                'timing-data-intro': '我们分析了如果您试图把握市场时机并错过最佳交易日会发生什么：',
+                'fully-invested': '完全投资',
+                'miss-5': '错过5个最佳交易日',
+                'miss-10': '错过10个最佳交易日',
+                'miss-40': '错过40个最佳交易日',
+                'baseline': '基准',
+                'lost-38': '损失38%！',
+                'lost-55': '损失55%！',
+                'lost-89': '损失89%！',
+                'timing-warning': '🚨 关键问题：最佳交易日通常发生在高波动期，就在最糟糕的日子之后。如果您为了避免损失而退出市场，您很可能会错过最大的收益。市场的最佳交易日经常发生在最糟糕的日子之后 - 您不能在不承担风险的情况下获得收益！',
+                'timing-example-title': '真实世界示例',
+                'timing-example-intro': '想象您在1990年投资10,000美元于标普500指数，并持有到2025年：',
+                'timing-solution': '💡 解决方案：<strong>保持投资！</strong> 您无法预测哪些日子会是最好的，试图把握市场时机通常意味着错过那些关键的日子。最佳策略是定期投资并长期持有 - 这正是我们35年分析证明有效的方法。',
+                // Life stages
+                'life-stages-title': '您应该做什么？（根据您的年龄）',
+                'young-title': '👶 20-30岁？您拥有最大的优势：时间',
+                'young-desc': '尽可能多地投资 - 您还有30-40年的时间',
+                'middle-title': '👨‍💼 40-50岁？您仍然有充足的时间',
+                'middle-desc': '您距离退休还有15-25年 - 这足以获得几乎确定的收益',
+                'senior-title': '👴 60岁以上？不要完全放弃股票',
+                'senior-desc': '您可能还有20-30年的寿命',
+                // Diversification
+                'diversification-title': '分散投资的力量',
+                'diversification-intro': '虽然所有市场在长期内都呈上升趋势，但它们不会同步移动。以下是我们发现的：',
+                'diversification-chart-caption': '不同市场如何一起移动（颜色越深 = 相关性越高）',
+                'diversification-strategy': '💡 策略：跨不同地区的多元化投资组合可以平滑您的投资旅程。当一个市场下跌时，另一个市场可能上涨。这降低了您的整体风险，同时保持增长潜力。',
+                // Three rules
+                'rules-title': '三个黄金法则',
+                'rule1-title': '1️⃣ 尽早开始，长期持有',
+                'rule1-desc': '数据明确表明：<span class="highlight">时间是您最大的盟友</span>。在市场中停留20年的投资者在大多数主要市场中历史上从未亏损。您开始得越早，可以积累的20年周期就越多。',
+                'rule2-title': '2️⃣ 下跌时不要恐慌',
+                'rule2-desc': '市场崩盘令人恐惧，但它们是暂时的。我们的数据证明，<span class="highlight">每次重大崩盘之后都出现了复苏</span>。在崩盘期间卖出会锁定损失。坚持持有可以让您参与复苏。<strong>记住：</strong>最佳交易日经常发生在最糟糕的日子之后。如果您为了避免损失而退出市场，您也会错过最大的收益 - 仅错过10个最佳交易日就可能损失55%或更多的回报！',
+                'rule3-title': '3️⃣ 分散投资仍然重要',
+                'rule3-desc': '虽然所有市场在长期内都呈上升趋势，但它们不会一起移动。跨地区的多元化投资组合可以平滑您的旅程，降低风险，同时保持增长潜力。',
+                // Bottom line
+                'bottom-line-title': '总结',
+                'bottom-line-remember': '如果您只记住一件事：',
+                'short-term': '短期（1年）',
+                'medium-term': '中期（5年）',
+                'long-term': '长期（20年）',
+                'gambling': '赌博',
+                'risky': '有风险',
+                'wealth-building': '财富积累',
+                'gambling-desc': '基本上不可预测',
+                'risky-desc': '对您有利，但可能亏损',
+                'wealth-desc': '几乎保证为正',
+                'magic-number': '🎯 神奇数字：20年<br><br>如果您能承诺持有投资20年：<br>• 您在大多数主要市场中历史上拥有<strong>100%的盈利机会</strong><br>• 您的<strong>最低回报</strong>根据市场不同，可能在+2%到+162%之间<br>• 您的<strong>平均回报</strong>可能在+51%到+609%之间<br><br><strong>时间不仅仅是重要 - 它就是一切。</strong>',
+                // Next steps
+                'next-steps-title': '您的下一步',
+                'next-steps-intro': '准备开始您的财富积累之旅了吗？以下是要做的事情：',
+                'step1-title': '1. 今天开始',
+                'step1-desc': '投资的最佳时间是20年前。第二好的时间是今天。您等待的每一天都是失去潜在增长的一天。',
+                'step2-title': '2. 定期投资',
+                'step2-desc': '设置自动月度投资。这种策略（称为"美元成本平均法"）帮助您在价格低时买入更多，在价格高时买入更少。',
+                'step3-title': '3. 选择广泛的市场指数基金',
+                'step3-desc': '对大多数人来说，跟踪主要市场的低成本指数基金（如标普500、纳斯达克或全球指数）是最佳选择。它们简单、多元化，并且历史上表现良好。',
+                'step4-title': '4. 坚持到底',
+                'step4-desc': '不要每天查看您的投资组合。下跌时不要恐慌。记住：时间在您这边。您持有时间越长，成功概率越高。',
+                'start-journey': '开始您的投资之旅',
+                // Footer
+                'footer-about': '关于此分析',
+                'footer-desc': '此分析基于14个主要全球市场指数在11个国家/地区35年的历史数据（1990年1月至2025年12月）。',
+                'footer-markets': '分析的市场：',
+                'footer-disclaimer': '免责声明：',
+                'footer-disclaimer-text': '此分析仅用于教育目的。过往表现不能保证未来结果。然而，在35年和14个不同市场中观察到的模式为长期投资的好处提供了强有力的证据。在做出投资决策之前，请务必咨询合格的财务顾问。',
+                'footer-generated': '报告生成时间：2025年12月 | 市场指数分析项目'
+            }
+        };
+
+        // Language switching function
+        function switchLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.body.setAttribute('lang', lang);
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Save preference
+            localStorage.setItem('preferred-language', lang);
+        }
+
+        // Initialize language from localStorage or browser preference
+        const savedLang = localStorage.getItem('preferred-language');
+        const browserLang = navigator.language || navigator.userLanguage;
+        const defaultLang = savedLang || (browserLang.startsWith('zh') ? 'zh' : 'en');
+        
+        // Set initial language
+        switchLanguage(defaultLang);
+
+        // Add click handlers to language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                switchLanguage(lang);
+            });
         });
     </script>
 </body>
