@@ -438,6 +438,20 @@ if __name__ == "__main__":
     analyzer.plot_rolling_returns_distribution()
     analyzer.plot_positive_return_probability()
     
+    # Market timing cost analysis
+    print("\n" + "=" * 60)
+    print("MARKET TIMING COST ANALYSIS")
+    print("=" * 60)
+    try:
+        from market_timing_cost import analyze_market_timing_cost
+        analyze_market_timing_cost(
+            csv_file='market_indices_data.csv',
+            index_name='S&P 500',
+            initial_investment=10000
+        )
+    except Exception as e:
+        print(f"Note: Market timing cost analysis skipped - {str(e)}")
+    
     # Holding period analysis
     print("\n" + "=" * 60)
     print("HOLDING PERIOD ANALYSIS - How Time Matters")
@@ -460,3 +474,5 @@ if __name__ == "__main__":
     print("  - correlation_heatmap.png")
     print("  - rolling_returns_distribution.png")
     print("  - positive_return_probability.png")
+    print("  - market_timing_cost.png (cost of missing best trading days)")
+    print("  - market_timing_cost_results.csv (timing cost analysis results)")
