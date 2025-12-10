@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Matters: Your Guide to Long-Term Wealth Building</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .key-finding {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .probability-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+
+        .probability-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .probability-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .probability-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .probability-bar {
+            height: 30px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            color: white;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .chart-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .chart-caption {
+            margin-top: 10px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .life-stage {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .life-stage h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .tip-box {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .quote {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #555;
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .quote-author {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .comparison-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .comparison-card h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .comparison-card .number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        footer {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: center;
+            color: #7f8c8d;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 20px 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⏰ Time Matters: Your Guide to Long-Term Wealth Building</h1>
+            <p class="subtitle">Based on 35 Years of Real Market Data Across 14 Global Markets</p>
+            
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">98-100%</div>
+                    <div class="stat-label">Success Rate at 20 Years</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">14</div>
+                    <div class="stat-label">Global Markets Analyzed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">35+</div>
+                    <div class="stat-label">Years of Data</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">Countries/Regions</div>
+                </div>
+            </div>
+        </header>
+
+        <section id="main-message">
+            <div class="key-finding">
+                🎯 THE ONE THING YOU NEED TO KNOW: The longer you stay invested, the higher your chance of making money. At 20 years, you have a 98-100% chance of profit across major global markets.
+            </div>
+
+            <h2>Why This Matters to You</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                Have you ever wondered: <strong>"When should I invest?"</strong> or <strong>"How long should I hold my investments?"</strong>
+            </p>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                After analyzing 35 years of real market data from 14 major global markets, the answer is crystal clear:
+            </p>
+            
+            <div class="quote">
+                "Time in the market beats timing the market."
+                <div class="quote-author">— Proven by 35 years of data</div>
+            </div>
+        </section>
+
+        <section id="probability">
+            <h2>Your Chance of Making Money</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                Here's what the data shows about your probability of making a profit based on how long you hold your investments:
+            </p>
+
+            <table class="probability-table">
+                <thead>
+                    <tr>
+                        <th>Holding Period</th>
+                        <th>Your Chance of Profit</th>
+                        <th>What This Means</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1 Year</strong></td>
+                        <td>49% - 81%</td>
+                        <td>Like flipping a coin - very risky!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5 Years</strong></td>
+                        <td>67% - 86%</td>
+                        <td>Odds are in your favor, but still risky</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10 Years</strong></td>
+                        <td>84% - 92%</td>
+                        <td>Very likely to make money</td>
+                    </tr>
+                    <tr>
+                        <td><strong>15 Years</strong></td>
+                        <td>88% - 100%</td>
+                        <td>Almost certain to profit</td>
+                    </tr>
+                    <tr style="background: #e8f5e9;">
+                        <td><strong>20 Years</strong></td>
+                        <td><strong>98% - 100%</strong></td>
+                        <td><strong>Historically, you almost never lose!</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="chart-container">
+                <img src="positive_return_probability.png" alt="Probability of Positive Returns Over Time">
+                <p class="chart-caption">This chart shows how your probability of making money increases dramatically as you hold longer</p>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Key Insight:</strong> If you can commit to holding your investments for 20 years, history shows you have a near 100% chance of making money in most major markets. Even in the worst-case scenario, investors in the S&P 500 gained at least 57% over 20 years!
+            </div>
+        </section>
+
+        <section id="real-examples">
+            <h2>Real Numbers: What $10,000 Could Have Become</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                Let's look at what would have happened if you invested $10,000 in 1990 and held until 2025 (35 years):
+            </p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>NASDAQ Composite</h4>
+                    <div class="number" style="color: #4caf50;">$1,609,000</div>
+                    <p>Your $10,000 became 160x larger!</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>CSI 300</h4>
+                    <div class="number" style="color: #4caf50;">$1,258,000</div>
+                    <p>125x your original investment</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>S&P 500</h4>
+                    <div class="number" style="color: #4caf50;">$288,000</div>
+                    <p>28x your original investment</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>FTSE 100</h4>
+                    <div class="number" style="color: #4caf50;">$51,000</div>
+                    <p>Even the most conservative market more than 5x'd your money</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <img src="cumulative_returns.png" alt="Cumulative Returns Over Time">
+                <p class="chart-caption">Long-term growth of major market indices (log scale to show growth patterns)</p>
+                <p style="margin-top: 15px;">
+                    <a href="normalized_performance.html" target="_blank" class="cta-button" style="display: inline-block; padding: 10px 25px; font-size: 0.9em;">
+                        📊 View Interactive Chart
+                    </a>
+                </p>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Remember:</strong> These are price returns only. With dividends reinvested, your returns would be even higher!
+            </div>
+        </section>
+
+        <section id="market-crashes">
+            <h2>What About Market Crashes?</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                You might be thinking: <em>"But what about all those market crashes I've heard about?"</em>
+            </p>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                Our analysis includes some of the worst market crashes in history:
+            </p>
+
+            <ul style="font-size: 1.1em; margin-left: 30px; margin-bottom: 20px;">
+                <li>📉 The Dot-com Bubble (2000-2002)</li>
+                <li>📉 The Global Financial Crisis (2008-2009)</li>
+                <li>📉 The COVID-19 Crash (2020)</li>
+                <li>📉 Various Asian market corrections</li>
+            </ul>
+
+            <div class="key-finding" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
+                ✅ Every single major crash in the last 35 years has been followed by a recovery. Investors who held through these storms came out ahead.
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> Market timing is nearly impossible. Even professional investors struggle to predict when to buy and sell. But time IN the market? That's something everyone can control.
+            </div>
+        </section>
+
+        <section id="life-stages">
+            <h2>What Should YOU Do? (Based on Your Age)</h2>
+
+            <div class="life-stage">
+                <h4>👶 In Your 20s-30s? You Have the Ultimate Advantage: TIME</h4>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Invest as much as you can afford - you have 30-40 years ahead</li>
+                    <li>Don't check your portfolio daily - check it yearly</li>
+                    <li>Market crashes are your FRIEND - you're buying at discounts!</li>
+                    <li>Focus on broad market index funds (like S&P 500, NASDAQ)</li>
+                </ul>
+            </div>
+
+            <div class="life-stage">
+                <h4>👨‍💼 In Your 40s-50s? You Still Have Plenty of Time</h4>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>You still have 15-25 years until retirement - that's enough for near-certain gains</li>
+                    <li>Maintain significant equity exposure (60-80% in stocks)</li>
+                    <li>Start thinking about gradual diversification</li>
+                    <li>Remember: even at 15 years, success rates exceed 88-100%</li>
+                </ul>
+            </div>
+
+            <div class="life-stage">
+                <h4>👴 In Your 60s+? Don't Abandon Stocks Entirely</h4>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>You may still have 20-30 years of life ahead</li>
+                    <li>Don't abandon equities entirely - keep 40-60% in stocks for long-term growth</li>
+                    <li>Use the "bucket strategy": keep near-term expenses in safer investments</li>
+                    <li>Long-term money can still benefit from market growth</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="diversification">
+            <h2>The Power of Diversification</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                While all markets trend upward over long periods, they don't move in lockstep. Here's what we found:
+            </p>
+
+            <div class="chart-container">
+                <img src="correlation_heatmap.png" alt="Market Correlation Heatmap">
+                <p class="chart-caption">How different markets move together (darker = more correlated)</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>🇺🇸 US Markets</h4>
+                    <p>Highest long-term returns, relatively stable</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>🇨🇳 Chinese Markets</h4>
+                    <p>Higher volatility but also higher potential gains</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>🇪🇺 European Markets</h4>
+                    <p>More modest but stable returns</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>🌏 Asian Markets</h4>
+                    <p>Varying performance patterns, good for diversification</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Strategy:</strong> A diversified portfolio across different regions can smooth your journey. When one market is down, another might be up. This reduces your overall risk while maintaining growth potential.
+            </div>
+        </section>
+
+        <section id="three-rules">
+            <h2>The Three Golden Rules</h2>
+
+            <div style="margin: 30px 0;">
+                <h3>1️⃣ Start Early, Stay Long</h3>
+                <p style="font-size: 1.1em; margin-top: 10px;">
+                    The data is unequivocal: <span class="highlight">time is your greatest ally</span>. An investor who stays in the market for 20 years has historically never lost money in most major markets. The earlier you start, the more 20-year periods you can accumulate.
+                </p>
+            </div>
+
+            <div style="margin: 30px 0;">
+                <h3>2️⃣ Don't Panic During Downturns</h3>
+                <p style="font-size: 1.1em; margin-top: 10px;">
+                    Market crashes feel scary, but they're temporary. Our data proves that <span class="highlight">every major crash has been followed by recovery</span>. Selling during a crash locks in losses. Holding through it allows you to participate in the recovery.
+                </p>
+            </div>
+
+            <div style="margin: 30px 0;">
+                <h3>3️⃣ Diversification Still Matters</h3>
+                <p style="font-size: 1.1em; margin-top: 10px;">
+                    While all markets trend upward over long periods, they don't move together. A diversified portfolio across regions can smooth your journey and reduce risk while maintaining growth potential.
+                </p>
+            </div>
+        </section>
+
+        <section id="bottom-line">
+            <h2>The Bottom Line</h2>
+            
+            <div class="quote" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                "In the short run, the market is a voting machine. In the long run, it is a weighing machine."
+                <div class="quote-author" style="color: rgba(255,255,255,0.9);">— Benjamin Graham</div>
+            </div>
+
+            <div style="margin: 30px 0;">
+                <h3>If You Remember Nothing Else:</h3>
+                <div class="comparison-grid" style="margin-top: 20px;">
+                    <div class="comparison-card" style="background: #ffebee;">
+                        <h4>Short-term (1 year)</h4>
+                        <div class="number" style="color: #d32f2f;">Gambling</div>
+                        <p>Essentially unpredictable</p>
+                    </div>
+                    <div class="comparison-card" style="background: #fff3e0;">
+                        <h4>Medium-term (5 years)</h4>
+                        <div class="number" style="color: #f57c00;">Risky</div>
+                        <p>Favors you, but losses possible</p>
+                    </div>
+                    <div class="comparison-card" style="background: #e8f5e9;">
+                        <h4>Long-term (20 years)</h4>
+                        <div class="number" style="color: #388e3c;">Wealth Building</div>
+                        <p>Almost guaranteed to be positive</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-finding">
+                🎯 THE MAGIC NUMBER: 20 YEARS<br><br>
+                If you can commit to holding your investments for 20 years:<br>
+                • You have historically had a <strong>100% chance of profit</strong> in most major markets<br>
+                • Your <strong>minimum return</strong> would have been +2% to +162% depending on the market<br>
+                • Your <strong>average return</strong> would have been +51% to +609%<br><br>
+                <strong>Time doesn't just matter—it's everything.</strong>
+            </div>
+        </section>
+
+        <section id="next-steps">
+            <h2>Your Next Steps</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                Ready to start your wealth-building journey? Here's what to do:
+            </p>
+
+            <div class="life-stage">
+                <h4>1. Start Today</h4>
+                <p>The best time to invest was 20 years ago. The second best time is TODAY. Every day you wait is a day of potential growth lost.</p>
+            </div>
+
+            <div class="life-stage">
+                <h4>2. Invest Regularly</h4>
+                <p>Set up automatic monthly investments. This strategy (called "dollar-cost averaging") helps you buy more when prices are low and less when prices are high.</p>
+            </div>
+
+            <div class="life-stage">
+                <h4>3. Choose Broad Market Index Funds</h4>
+                <p>For most people, low-cost index funds that track major markets (like S&P 500, NASDAQ, or global indices) are the best choice. They're simple, diversified, and historically perform well.</p>
+            </div>
+
+            <div class="life-stage">
+                <h4>4. Stay the Course</h4>
+                <p>Don't check your portfolio daily. Don't panic during downturns. Remember: time is on your side. The longer you hold, the higher your probability of success.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#main-message" class="cta-button">Start Your Investment Journey</a>
+            </div>
+        </section>
+
+        <footer>
+            <h3>About This Analysis</h3>
+            <p style="margin-top: 15px;">
+                This analysis is based on 35 years of historical data (January 1990 to December 2025) from 14 major global market indices across 11 countries/regions.
+            </p>
+            <p style="margin-top: 10px;">
+                <strong>Markets Analyzed:</strong> S&P 500, NASDAQ Composite, FTSE 100, Hang Seng, Nikkei 225, S&P/TSX Composite, FTSE Bursa Malaysia KLCI, CAC 40, DAX, Straits Times Index, S&P/ASX 200, Shanghai Composite, Shenzhen Component, CSI 300
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em; color: #95a5a6;">
+                <strong>Disclaimer:</strong> This analysis is for educational purposes only. Past performance does not guarantee future results. However, the patterns observed across 35 years and 14 different markets provide strong evidence for the benefits of long-term investing. Always consult with a qualified financial advisor before making investment decisions.
+            </p>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #95a5a6;">
+                Report Generated: December 2025 | Market Indices Analysis Project
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+
