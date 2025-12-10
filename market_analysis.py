@@ -1,12 +1,20 @@
-import yfinance as yf
-import akshare as ak
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
-import plotly.express as px
-import plotly.graph_objects as go
+try:
+    import seaborn as sns
+except ImportError:
+    sns = None
+    print("Warning: Seaborn not found. Heatmaps will be skipped or degraded.")
+try:
+    import plotly.express as px
+    import plotly.graph_objects as go
+except ImportError:
+    px = None
+    go = None
+    print("Warning: Plotly not found. Interactive charts will be skipped.")
 from datetime import datetime, timedelta
 import numpy as np
+import os
 
 class MarketIndexAnalyzer:
     def __init__(self):
@@ -42,12 +50,78 @@ class MarketIndexAnalyzer:
         self.data = pd.DataFrame()
         self.start_date = '1950-09-07'
         self.end_date = datetime.now().strftime('%Y-%m-%d')
+        
+        # Set style for professional financial look (Navy/Gold/White theme)
+        plt.style.use('seaborn-v0_8-whitegrid')
+        
+        self.colors = [
+            '#003366',  # Deep Navy (Primary)
+            '#C0B283',  # Muted Gold (Secondary)
+            '#2E8B57',  # Sea Green (Success/Growth)
+            '#D32F2F',  # Crimson (Risk/Loss)
+            '#5D4037',  # Brown (Earth tones)
+            '#757575',  # Grey (Neutral)
+            '#0288D1',  # Light Blue
+            '#7B1FA2',  # Purple
+            '#388E3C',  # Dark Green
+            '#FBC02D',  # Bright Gold
+            '#E64A19',  # Deep Orange
+            '#455A64',  # Blue Grey
+            '#1976D2',  # Blue
+            '#C2185B'   # Pink
+        ]
+        
+        plt.rcParams.update({
+            'font.family': 'sans-serif',
+            'font.sans-serif': ['Arial', 'Helvetica', 'DejaVu Sans'],
+            'font.size': 12,
+            'axes.titlesize': 16,
+            'axes.labelsize': 14,
+            'axes.prop_cycle': plt.cycler(color=self.colors),
+            'figure.facecolor': 'white',
+            'axes.facecolor': 'white',
+            'axes.grid': True,
+            'grid.alpha': 0.3,
+            'grid.color': '#cccccc',
+            'text.color': '#333333',
+            'axes.labelcolor': '#333333',
+            'xtick.color': '#333333',
+            'ytick.color': '#333333',
+            'legend.frameon': True,
+            'legend.facecolor': 'white',
+            'legend.edgecolor': '#cccccc',
+            'figure.autolayout': True
+        })
     
-    def fetch_data(self):
-        """Fetch historical market data for all indices between the configured dates"""
+    def fetch_data(self, use_local_if_available=True):
+        """Fetch historical market data or load from local CSV"""
+        csv_file = 'market_indices_data.csv'
+        
+        if use_local_if_available and os.path.exists(csv_file):
+            print(f"Loading data from local file: {csv_file}")
+            try:
+                self.data = pd.read_csv(csv_file, index_col=0, parse_dates=True)
+                print(f"Loaded {len(self.data.columns)} indices with {len(self.data)} rows.")
+                return self.data
+            except Exception as e:
+                print(f"Failed to load local file: {e}. Attempting to fetch...")
+        
         print(f"Fetching data from {self.start_date} to {self.end_date}")
         print("-" * 50)
         
+        # Lazy import to avoid hard dependency if using local data
+        try:
+            import yfinance as yf
+            import akshare as ak
+        except ImportError as e:
+            print(f"CRITICAL ERROR: Missing dependencies for data fetching ({e}).")
+            print(f"Please install requirements or ensure '{csv_file}' exists.")
+            if os.path.exists(csv_file):
+                print(f"Falling back to local file {csv_file}...")
+                self.data = pd.read_csv(csv_file, index_col=0, parse_dates=True)
+                return self.data
+            return pd.DataFrame()
+
         all_data = {}
         failed_yf = []  # Track failed Yahoo Finance downloads
         start_dt = datetime.strptime(self.start_date, '%Y-%m-%d')
@@ -198,6 +272,10 @@ class MarketIndexAnalyzer:
     
     def plot_normalized_performance(self):
         """Plot normalized performance (all starting at 100) for comparison"""
+        if px is None or go is None:
+            print("Skipping normalized performance plot (Plotly not installed)")
+            return
+
         # Normalize each column from its first valid value
         normalized = pd.DataFrame()
         for col in self.data.columns:
@@ -205,6 +283,48 @@ class MarketIndexAnalyzer:
             if not series.empty:
                 normalized[col] = series / series.iloc[0] * 100
         
+        # Set style for professional financial look
+        plt.style.use('seaborn-v0_8-whitegrid')
+        
+        # Financial Color Palette (Navy, Gold, White theme)
+        colors = [
+            '#003366',  # Deep Navy (Primary)
+            '#C0B283',  # Muted Gold (Secondary)
+            '#2E8B57',  # Sea Green (Success/Growth)
+            '#D32F2F',  # Crimson (Risk/Loss)
+            '#5D4037',  # Brown (Earth tones)
+            '#757575',  # Grey (Neutral)
+            '#0288D1',  # Light Blue
+            '#7B1FA2',  # Purple
+            '#388E3C',  # Dark Green
+            '#FBC02D',  # Bright Gold
+            '#E64A19',  # Deep Orange
+            '#455A64',  # Blue Grey
+            '#1976D2',  # Blue
+            '#C2185B'   # Pink
+        ]
+        
+        plt.rcParams.update({
+            'font.family': 'sans-serif',
+            'font.sans-serif': ['Arial', 'Helvetica', 'DejaVu Sans'],
+            'font.size': 12,
+            'axes.titlesize': 16,
+            'axes.labelsize': 14,
+            'axes.prop_cycle': plt.cycler(color=colors),
+            'figure.facecolor': 'white',
+            'axes.facecolor': 'white',
+            'axes.grid': True,
+            'grid.alpha': 0.3,
+            'grid.color': '#cccccc',
+            'text.color': '#333333',
+            'axes.labelcolor': '#333333',
+            'xtick.color': '#333333',
+            'ytick.color': '#333333',
+            'legend.frameon': True,
+            'legend.facecolor': 'white',
+            'legend.edgecolor': '#cccccc',
+            'figure.autolayout': True
+        })
         fig = go.Figure()
         for column in normalized.columns:
             fig.add_trace(go.Scatter(
@@ -220,7 +340,16 @@ class MarketIndexAnalyzer:
             yaxis_title='Index Value (Normalized)',
             hovermode='x unified',
             template='plotly_white',
-            height=600
+            height=600,
+            paper_bgcolor='white',
+            plot_bgcolor='white',
+            font=dict(
+                family="Arial, sans-serif",
+                size=12,
+                color="#333333"
+            ),
+            title_font_color="#003366",
+            colorway=self.colors
         )
         fig.write_html('normalized_performance.html')
         print("Saved normalized performance plot as 'normalized_performance.html'")
@@ -257,8 +386,20 @@ class MarketIndexAnalyzer:
         
         plt.figure(figsize=(10, 8))
         corr_matrix = daily_returns.corr()
-        sns.heatmap(corr_matrix, annot=True, cmap='RdYlGn', vmin=-1, vmax=1, 
-                    fmt='.2f', square=True, linewidths=0.5)
+        
+        if sns:
+            sns.heatmap(corr_matrix, annot=True, cmap='RdYlGn', vmin=-1, vmax=1, 
+                        fmt='.2f', square=True, linewidths=0.5)
+        else:
+            plt.imshow(corr_matrix, cmap='RdYlGn', vmin=-1, vmax=1)
+            plt.colorbar()
+            plt.xticks(range(len(corr_matrix.columns)), corr_matrix.columns, rotation=90)
+            plt.yticks(range(len(corr_matrix.columns)), corr_matrix.columns)
+            for i in range(len(corr_matrix.columns)):
+                for j in range(len(corr_matrix.columns)):
+                    text = plt.text(j, i, f"{corr_matrix.iloc[i, j]:.2f}",
+                                   ha="center", va="center", color="black")
+            
         plt.title('Correlation Matrix of Market Index Daily Returns', fontsize=14)
         plt.tight_layout()
         plt.savefig('correlation_heatmap.png', dpi=150)
